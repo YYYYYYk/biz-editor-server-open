@@ -4,27 +4,27 @@
 
 name: test
 
-on:
-    push:
-        branches:
-            - master
-        paths:
+on: # 触发条件
+    push: # git push
+        branches: # 可多个分支
+            - master 
+        paths: # 文件改动包含以下则会触发
             - '.github/workflows/**'
             - '__test__/**'
             - 'src/**'
 
-jobs:
-    test:
-        runs-on: ubuntu-latest
+jobs: # 任务
+    test: # 任务1
+        runs-on: ubuntu-latest # 操作系统
 
-        steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js
-              uses: actions/setup-node@v1
+        steps: # 步骤
+            - uses: actions/checkout@v2 # 步骤1，使用的是第三方的uses，做的是git pull
+            - name: Use Node.js # 步骤2， name可省略
+              uses: actions/setup-node@v1 # 使用的是第三方的uses
               with:
-                  node-version: 14
-            - name: lint and test
-              run: |
+                  node-version: 14 # 指定版本号
+            - name: lint and test # 步骤3,名称
+              run: | # '|'多行语法
                   npm i
                   npm run lint
                   npm run test:remote
