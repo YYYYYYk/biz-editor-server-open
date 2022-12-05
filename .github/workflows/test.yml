@@ -4,7 +4,7 @@
 
 name: test
 
-on: # 触发条件
+on: # 触发条件11111
     push: # git push
         branches: # 可多个分支
             - master 
