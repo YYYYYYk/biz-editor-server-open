@@ -4,6 +4,7 @@
  */
 
 const AipContentCensorClient = require('baidu-aip-sdk').contentCensor
+// eslint-disable-next-line import/extensions
 const { baiduCloudCensorConf } = require('../config/index.js')
 const { mailAlarm } = require('../alarm/index')
 

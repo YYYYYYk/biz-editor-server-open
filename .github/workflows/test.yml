@@ -24,7 +24,6 @@ jobs: # 任务
               with:
                   node-version: 14 # 指定版本号
             - name: lint and test # 步骤3,名称
-              run: | # '|'多行语法
+              run: | # '|'多行语法, npm run test:remote
                   npm i
                   npm run lint
-                  npm run test:remote
